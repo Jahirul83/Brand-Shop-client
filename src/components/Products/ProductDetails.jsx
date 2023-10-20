@@ -1,14 +1,38 @@
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const ProductDetails = () => {
     const product = useLoaderData()
     const { _id, name, brandName, type, price, description, rating, photo } = product;
 
-    const handleAddTocart = () =>{
+    const handleAddTocart = () => {
+
+        fetch('http://localhost:5000/carts',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(product)
+        })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+                if(data.insertedId)
+                {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Cart has been saved',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                      
+                }
+            })
 
     }
-    
+
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
