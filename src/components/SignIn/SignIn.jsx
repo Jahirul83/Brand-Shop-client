@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 
@@ -7,6 +7,9 @@ import { FcGoogle } from "react-icons/fc";
 const SignIn = () => {
     const { signInUser, signInWithGoogle } = useContext(AuthContext);
     const navigate = useNavigate();
+
+    const location = useLocation();
+    // console.log('location form login', location);
 
     const handleLogin = e => {
         e.preventDefault();
@@ -20,7 +23,9 @@ const SignIn = () => {
             .then(result => {
                 console.log(result.user)
                 e.target.reset();
-                navigate('/')
+
+                // navigate after login
+                navigate(location?.state ? location.state : '/');
 
             })
             .catch(error => {
@@ -33,7 +38,7 @@ const SignIn = () => {
     const handleGoongleLogIn = () => {
 
         signInWithGoogle()
-            .then(result =>{
+            .then(result => {
                 console.log(result.user)
                 navigate('/')
 
