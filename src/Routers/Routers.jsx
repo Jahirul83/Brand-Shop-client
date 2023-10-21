@@ -11,12 +11,14 @@ import MyCard from "../components/MyCard/MyCard";
 import PrivateRoute from "./PrivateRoute";
 import FAQ from "../components/Home/FAQ";
 import ContactUs from "../components/Home/ContactUs";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
