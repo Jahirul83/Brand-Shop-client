@@ -32,7 +32,7 @@ const router = createBrowserRouter([
       {
         path: '/products/:id',
         element: <Products></Products>,
-        loader: () => fetch('http://localhost:5000/products')
+        loader: () => fetch('https://brand-shop-server-3yevjqmt2-jahirul83.vercel.app/products')
 
       },
       {
@@ -46,18 +46,18 @@ const router = createBrowserRouter([
       {
         path: '/updateproduct/:id',
         element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-3yevjqmt2-jahirul83.vercel.app/products/${params.id}`)
       },
       {
         path: '/productDetails/:id',
         element: <PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-server-3yevjqmt2-jahirul83.vercel.app/products/${params.id}`)
 
       },
       {
         path: '/mycart',
         element: <PrivateRoute><MyCard></MyCard></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/carts')
+        loader: () => fetch('https://brand-shop-server-3yevjqmt2-jahirul83.vercel.app/carts')
       },
       {
         path:'/faq',
