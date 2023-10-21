@@ -4,7 +4,7 @@ const ContactUs = () => {
         <div>
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
-                    <img src={contactPic} className='max-w-sm' />
+                    <img src={contactPic} className='max-w-sm w-1/2 md:w-full' />
                     <div>
                         <div className="card bg-base-100 shadow-xl">
                             <div className="card-body">
@@ -15,7 +15,7 @@ const ContactUs = () => {
                                     </label>
                                     <label className="input-group">
                                         <span>Email</span>
-                                        <input type="text" placeholder="info@site.com" className="input input-bordered" />
+                                        <input type="text" placeholder="info@site.com" className='input w-full' />
                                     </label>
                                 </div>
                                 <textarea className="textarea textarea-ghost border-inherit" placeholder="message"></textarea>
