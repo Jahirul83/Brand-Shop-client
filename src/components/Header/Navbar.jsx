@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import userDefaultPic from "../../assets/user.png"
 
 
 const Navbar = () => {
@@ -8,10 +9,10 @@ const Navbar = () => {
 
     const handleSignOut = () => {
         logOut()
-        .then(()=> console.log('user logout successful'))
-        .catch(error => {
-            console.error(error);
-        })
+            .then(() => console.log('user logout successful'))
+            .catch(error => {
+                console.error(error);
+            })
     }
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
@@ -41,13 +42,25 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user ? <>
-                            {user.email}
-                            <Link to='/signIn'><button
-                                onClick={handleSignOut} className="btn">Sign Out</button></Link>
-                        </> :
-                            <Link to='/signIn'><button className="btn">Login</button></Link>
+                        user ?
+                            <div className="flex">
+                                <div className="dropdown dropdown-end mr-3 ">
+                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-10 rounded-full">
+                                            <img src={user?.photoURL ? user.photoURL : userDefaultPic} />
+                                        </div>
+                                    </label>
+                                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
 
+                                        <Link className="ml-3 mb-2" to="/profile"><li>Profile</li></Link>
+                                        <Link className="ml-3" to="/signUp"><li>Register</li></Link>
+                                    </ul>
+                                </div>
+                                <button onClick={handleSignOut}
+                                    className="btn text-white bg-blue-500">Logout</button>
+                            </div>
+                            :
+                            <Link to='/signIn'><button className="btn text-white bg-blue-500">Login</button></Link>
                     }
                 </div>
             </div>
