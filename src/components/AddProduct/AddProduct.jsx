@@ -60,9 +60,21 @@ const AddProduct = () => {
                         <label className="label">
                             <span className="label-text">Brand Name</span>
                         </label>
+                        {/* main */}
                         <label className="input-group">
-                            <input type="text" name="brandName" placeholder="brand name" className="input input-bordered w-full" />
+
+                            <select name="brandName" className="input input-bordered w-full">
+                                <option value="Apple">Apple</option>
+                                <option value="Samsung">Samsung</option>
+                                <option value="Sony">Sony</option>
+                                <option value="Sony">intel</option>
+                                <option value="Sony">Google</option>
+                                <option value="Sony">Xiaomi</option>
+                            </select>
+                            {/* <input type="text" name="brandName" placeholder="brand name" className="input input-bordered w-full" /> */}
                         </label>
+
+
                     </div>
                 </div>
                 {/* form type and price row */}
@@ -94,12 +106,24 @@ const AddProduct = () => {
                             <input type="text" name="description" placeholder="short description" className="input input-bordered w-full" />
                         </label>
                     </div>
+                    {/* reting */}
                     <div className="form-control md:w-1/2 ml-4">
                         <label className="label">
                             <span className="label-text">Rating</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" />
+
+                            <input
+                                type="number"
+                                name="rating"
+                                placeholder="Rating"
+                                className="input input-bordered w-full"
+                                min="1"
+                                max="5"
+                                step="1"
+                            />
+
+                           {/*  <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" /> */}
                         </label>
                     </div>
                 </div>
