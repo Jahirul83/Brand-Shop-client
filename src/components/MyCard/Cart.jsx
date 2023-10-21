@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import PropTypes from 'prop-types';
 
 
 const Cart = ({ cart }) => {
@@ -43,9 +44,11 @@ const Cart = ({ cart }) => {
                 <figure><img className="w-2/3" src={photo} alt="product" /></figure>
                 <div className="card-body ">
                     <h2 className="card-title">{name}</h2>
-                    <p>{description}</p>
-                    <p>{type}</p>
-                    <p>{price} tk</p>
+                    <h2 className="card-title">BrandName: {brandName}</h2>
+                    <p>description: {description}</p>
+                    <p>type: {type}</p>
+                    <p>Rating: {rating}</p>
+                    <p>price: {price} tk</p>
                     <div className="card-actions justify-end">
                         <button
                             onClick={() => handleDelete(_id)}
@@ -58,3 +61,8 @@ const Cart = ({ cart }) => {
 };
 
 export default Cart;
+
+Cart.propTypes = {
+    cart: PropTypes.object
+
+};
