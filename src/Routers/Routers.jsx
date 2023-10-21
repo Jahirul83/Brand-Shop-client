@@ -20,14 +20,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader:()=>fetch('/brand.json')
       },
       {
         path: '/addproduct',
         element: <AddProduct></AddProduct>
       },
       {
-        path: '/products',
+        path: '/products/:id',
         element: <Products></Products>,
         loader: () => fetch('http://localhost:5000/products')
 

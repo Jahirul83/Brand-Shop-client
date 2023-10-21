@@ -1,17 +1,19 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 import ProductCard from "./productCard";
 import apple from "../../assets/apple-branding-history.png"
 import samsung from "../../assets/samsung-brand.jpg"
 import sony from "../../assets/main-pic-BrandBanner.jpg"
 import google from "../../assets/istockphoto-1163973538-1024x1024.jpg"
-import intel from "../../assets/intel-5g-pcs-1024x678.jpg"
-import xiaomi from "../../assets/Xiaomi-Logo-Branding-2021.jpg"
+// import intel from "../../assets/intel-5g-pcs-1024x678.jpg"
+// import xiaomi from "../../assets/Xiaomi-Logo-Branding-2021.jpg"
 
 
 const Products = () => {
+    const { id } = useParams();
     const products = useLoaderData();
     return (
         <div>
+            {id}
             {/* carousel */}
 
             <div className="carousel w-full">

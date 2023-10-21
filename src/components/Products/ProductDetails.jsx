@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const ProductDetails = () => {
     const product = useLoaderData()
-    const { _id, name, brandName, type, price, description, rating, photo } = product;
+    const { name, brandName, type, price, description, rating, photo } = product;
 
     const handleAddTocart = () => {
 
@@ -40,6 +40,7 @@ const ProductDetails = () => {
                 <div>
                     <h1 className="text-5xl font-bold">{name}</h1>
                     <p className="py-3">description: {description}</p>
+                    <p className="py-3">Brand Name: {brandName}</p>
                     <p className="py-3">type: {type}</p>
                     <p className="py-3">price: {price} tk</p>
                     <p className="py-3">rating: {rating}</p>
