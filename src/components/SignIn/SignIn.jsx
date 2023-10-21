@@ -1,10 +1,12 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { FcGoogle } from "react-icons/fc";
 
 
 const SignIn = () => {
-    const { signInUser } = useContext(AuthContext)
+    const { signInUser, signInWithGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleLogin = e => {
         e.preventDefault();
@@ -14,16 +16,31 @@ const SignIn = () => {
         // console.log(email, password);
 
         // user login
-        signInUser(email,password)
-        .then(result => {
-            console.log(result.user)
-        })
-        .catch(error => {
-            console.error(error);
-        })
+        signInUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                e.target.reset();
+                navigate('/')
+
+            })
+            .catch(error => {
+                console.error(error);
+            })
 
 
+    }
 
+    const handleGoongleLogIn = () => {
+
+        signInWithGoogle()
+            .then(result =>{
+                console.log(result.user)
+                navigate('/')
+
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
     return (
         <div>
@@ -54,11 +71,16 @@ const SignIn = () => {
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>
+                            <p className="text-center">Or</p>
+                        </form>
+                        {/* google login */}
+                        <div className="px-6 pb-4">
+                            <button onClick={handleGoongleLogIn} className="btn btn-block"><FcGoogle></FcGoogle> Google</button>
                             <p>Do not have an account. please<Link
                                 to='/signUp'>
                                 <button className="btn btn-link">register</button>
                             </Link></p>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
