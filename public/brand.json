@@ -1,0 +1,47 @@
+{
+    "carousels": [
+      {
+        "id": 1,
+        "brandName": "Apple",
+        "image1": "apple_image1_url.jpg",
+        "image2": "apple_image2_url.jpg",
+        "image3": "apple_image3_url.jpg"
+      },
+      {
+        "id": 2,
+        "brandName": "Samsung",
+        "image1": "samsung_image1_url.jpg",
+        "image2": "samsung_image2_url.jpg",
+        "image3": "samsung_image3_url.jpg"
+      },
+      {
+        "id": 3,
+        "brandName": "Sony",
+        "image1": "sony_image1_url.jpg",
+        "image2": "sony_image2_url.jpg",
+        "image3": "sony_image3_url.jpg"
+      },
+      {
+        "id": 4,
+        "brandName": "Intel",
+        "image1": "intel_image1_url.jpg",
+        "image2": "intel_image2_url.jpg",
+        "image3": "intel_image3_url.jpg"
+      },
+      {
+        "id": 5,
+        "brandName": "Google",
+        "image1": "google_image1_url.jpg",
+        "image2": "google_image2_url.jpg",
+        "image3": "google_image3_url.jpg"
+      },
+      {
+        "id": 6,
+        "brandName": "Xiaomi",
+        "image1": "xiaomi_image1_url.jpg",
+        "image2": "xiaomi_image2_url.jpg",
+        "image3": "xiaomi_image3_url.jpg"
+      }
+    ]
+  }
+  

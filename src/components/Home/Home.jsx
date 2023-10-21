@@ -6,6 +6,8 @@ import google from "../../assets/istockphoto-1163973538-1024x1024.jpg"
 import intel from "../../assets/intel-5g-pcs-1024x678.jpg"
 import xiaomi from "../../assets/Xiaomi-Logo-Branding-2021.jpg"
 import { Link } from "react-router-dom";
+import FAQ from "./FAQ";
+import ContactUs from "./ContactUs";
 
 const Home = () => {
     return (
@@ -86,6 +88,15 @@ const Home = () => {
                         </div>
                     </div>
                 </Link>
+            </div>
+            {/* FAQ */}
+            <div className="my-5">
+                <FAQ></FAQ>
+            </div>
+
+            {/* contact Us */}
+            <div>
+                <ContactUs></ContactUs>
             </div>
         </div>
     );

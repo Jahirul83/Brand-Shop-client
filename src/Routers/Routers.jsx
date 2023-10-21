@@ -9,6 +9,8 @@ import UpdateProduct from "../components/UpdateProduct/UpdateProduct";
 import ProductDetails from "../components/Products/productDetails";
 import MyCard from "../components/MyCard/MyCard";
 import PrivateRoute from "./PrivateRoute";
+import FAQ from "../components/Home/FAQ";
+import ContactUs from "../components/Home/ContactUs";
 
 
 const router = createBrowserRouter([
@@ -53,6 +55,14 @@ const router = createBrowserRouter([
         path: '/mycart',
         element: <PrivateRoute><MyCard></MyCard></PrivateRoute>,
         loader: () => fetch('http://localhost:5000/carts')
+      },
+      {
+        path:'/faq',
+        element:<FAQ></FAQ>
+      },
+      {
+        path:'/contact',
+        element:<ContactUs></ContactUs>
       }
     ]
   },

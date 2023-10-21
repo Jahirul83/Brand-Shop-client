@@ -18,8 +18,8 @@ const Navbar = () => {
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/addproduct'>Add Product</NavLink></li>
         <li><NavLink to='/mycart'>My cart</NavLink></li>
-        {/* <li><NavLink to='/signIn'>login</NavLink></li>
-        <li><NavLink to='/signup'>signUp</NavLink></li> */}
+        <li><NavLink to='/faq'>FAQ</NavLink></li>
+        <li><NavLink to='/contact'>Contact Us</NavLink></li>
     </>
     return (
         <div>
@@ -33,7 +33,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link to='/' className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl"><p className="font-bold">GadgetHub<span className="text-blue-600">Pro</span></p></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
